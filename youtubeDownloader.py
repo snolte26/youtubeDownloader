@@ -1,5 +1,6 @@
 import pytube
 import os
+import time
 
 
 def video(link):
@@ -8,6 +9,7 @@ def video(link):
     stream = video.streams.get_highest_resolution()
     stream.download()
     print("Finished!")
+    time.sleep(.5)
     os.system('cls')
 
 
@@ -29,6 +31,7 @@ def audio(link):
         pass
 
     print("Finished!")
+    time.sleep(.5)
     os.system('cls')
 
 
