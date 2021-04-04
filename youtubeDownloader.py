@@ -1,10 +1,11 @@
 import pytube
+import os
 
 
 def video(link):
     print("Starting...")
     video = pytube.YouTube(link)
-    stream = video.streams.get_by_itag(299)
+    stream = video.streams.get_highest_resolution()
     stream.download()
     print("Finished!")
 
@@ -12,8 +13,20 @@ def video(link):
 def audio(link):
     print("Starting...")
     video = pytube.YouTube(link)
-    stream = video.streams.get_by_itag(140)
+    stream = video.streams.get_audio_only()
     stream.download()
+
+    try:
+        files = os.listdir(os.curdir)
+        for file in files:
+            if '.mp4' in file:
+                newfile = file.replace('.mp4', '.mp3')
+                os.rename(file, newfile)
+    except:
+        print("Couldn't convert MP4 to MP3, "
+              "Please do so manually")
+        pass
+
     print("Finished!")
 
 
@@ -22,8 +35,8 @@ def main():
     print()
 
     while True:
-        print("1. Video (No Audio)\n"
-              "2. Audio (No Video)\n"
+        print("1. Video\n"
+              "2. Audio\n"
               "3. Exit")
         print()
         choice = int(input("What would you like to do? "))
