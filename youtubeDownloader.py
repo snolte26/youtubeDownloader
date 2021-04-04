@@ -8,7 +8,7 @@ def video(link):
     stream = video.streams.get_highest_resolution()
     stream.download()
     print("Finished!")
-    print()
+    os.system('cls')
 
 
 def audio(link):
@@ -29,7 +29,7 @@ def audio(link):
         pass
 
     print("Finished!")
-    print()
+    os.system('cls')
 
 
 def main():
