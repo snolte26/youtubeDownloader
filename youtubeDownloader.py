@@ -15,20 +15,25 @@ def video(link):
 
 def audio(link):
     print("Starting...")
-    video = pytube.YouTube(link)
-    stream = video.streams.get_audio_only()
-    stream.download()
+    
+    video_url = link
+    video_info = youtube_dl.YoutubeDL().extract_info(
+        url=video_url, download=False
+    )
+
+    filename = f"{video_info['title']}.mp3"
+    options={
+        'format': 'bestaudio/best',
+        'keepvideo': False,
+        'outtmpl': filename
+    }
 
     try:
-        files = os.listdir(os.curdir)
-        for file in files:
-            if '.mp4' in file:
-                newfile = file.replace('.mp4', '.mp3')
-                os.rename(file, newfile)
-    except:
-        print("Couldn't convert MP4 to MP3, "
-              "Please do so manually")
-        pass
+        with youtube_dl.YoutubeDL(options) as ydl:
+            print("Attempting download... \n")
+            ydl.download([video_info['webpage_url']])
+    except Exception as e:
+        print("Fatal Error Occurred! Code: " + e)
 
     print("Finished!")
     time.sleep(.5)
