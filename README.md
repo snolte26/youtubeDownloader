@@ -14,3 +14,14 @@ Now it downloads the highest quality stream with video and
 audio, and audio only is converted from .mp4 to .mp3.
 
 `````````````````````````````````````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````````````````````````````````````
+Update 10/24/2021:
+-Changed how bot converts/downloads mp3's
+
+The bot used to download .mp3 files by first downloading a
+.mp4 file and then changing the extension to .mp3. While this
+technically worked, this was not a great solution and could not 
+use the .mp3's elsewhere. Now the bot goes through a different 
+process to download .mp3 files that are more usable
+
+`````````````````````````````````````````````````````````````````````````````````````````````
