@@ -25,3 +25,14 @@ use the .mp3's elsewhere. Now the bot goes through a different
 process to download .mp3 files that are more usable
 
 `````````````````````````````````````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````````````````````````````````````
+Update 1/29/202:
+-Created GUI .mp3 converter
+
+There is now an easier way to download YouTube videos to the 
+desktop as .mp3's. With this new GUI, you can input the YouTube
+URL and press the download button. After a few moments, a message
+will appear stating that the .mp3 was downloaded successfully. No 
+more command line interface.
+
+`````````````````````````````````````````````````````````````````````````````````````````````
