@@ -33,6 +33,6 @@ There is now an easier way to download YouTube videos to the
 desktop as .mp3's. With this new GUI, you can input the YouTube
 URL and press the download button. After a few moments, a message
 will appear stating that the .mp3 was downloaded successfully. No 
-more command line interface.
+more command line interface. YouTube_Downloader.pyw is the application to use
 
 `````````````````````````````````````````````````````````````````````````````````````````````
